@@ -1,28 +1,21 @@
 <!-- Core Styling -->
 <style>
-  .download-mod-button {
-    background-color: #408cff;
-    text-align: center;
-    color: white !important;
-    font-size: 18px;
-    border: none;
-    padding: 14px;
-    font-weight: bold;
-    width: 90%;
-    max-width: 300px;
-    border-radius: 29px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f8f9fc;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1e1e2f;
   }
 
-  .download-mod-button:hover {
-    background-color: #296fd6;
-  }
-
-  .download-mod-button a {
-    color: white !important;
-    text-decoration: none;
+  .modhub-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.07);
+    animation: fadeIn 1s ease-out;
   }
 
   @keyframes fadeIn {
@@ -30,43 +23,11 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #fff;
-  }
-
-  #header, .header, #navbar, #PageList1, .sidebar, #sidebar, #left-sidebar,
-  #right-sidebar, .post-footer, #footer, .footer, .blog-pager, .breadcrumbs {
-    display: none !important;
-  }
-
-  #main-wrapper, .main-inner, .blog-posts {
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-  }
-
-  #main-wrapper * {
-    font-family: 'Segoe UI', sans-serif !important;
-  }
-
-  .modhub-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #ffffff;
-    color: #1e1e2f;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
-    animation: fadeIn 1.2s ease-out;
-  }
-
   .app-header {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
   }
 
@@ -77,10 +38,20 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
+  h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  p.meta {
+    color: #777;
+    font-size: 13px;
+  }
+
   .app-description {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 20px 0;
     color: #444;
   }
 
@@ -88,7 +59,7 @@
     overflow-x: auto;
     display: flex;
     gap: 12px;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
     padding-bottom: 8px;
     scroll-behavior: smooth;
   }
@@ -113,25 +84,39 @@
     padding-left: 20px;
   }
 
-  h1 {
-    font-size: 28px;
-    margin: 0;
-  }
-
   h2 {
     font-size: 22px;
     margin-bottom: 10px;
   }
 
-  p.meta {
-    color: #555;
-    font-size: 13px;
+  .download-container {
+    text-align: center;
+    margin-top: 40px;
   }
 
-  /* Mobile Styles */
+  .better-download-button {
+    display: inline-block;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #4386fa, #326fd1);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .better-download-button:hover {
+    background: linear-gradient(135deg, #326fd1, #2758b8);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
   @media (max-width: 600px) {
     .modhub-container {
-      padding: 15px;
+      padding: 20px;
     }
 
     h1 {
@@ -147,9 +132,9 @@
       font-size: 14px;
     }
 
-    .download-mod-button {
+    .better-download-button {
       font-size: 16px;
-      padding: 12px;
+      padding: 14px 24px;
     }
 
     .screenshots img {
@@ -163,7 +148,7 @@
 
   <!-- Header -->
   <div class="app-header">
-    <img src="https://play-lh.googleusercontent.com/qQTPG-57RmYhDRR5fsLP2GEKm72FyCPLMnOaauNfuumKpAHZ1Zsfzj1ZrDEze4P6xg=w240-h480-rw" alt="TheModHub Icon">
+    <img src="https://pfwzdnxjhpyjurtmkkdo.supabase.co/storage/v1/object/sign/themodhub/TheModHub_release.v1.0.apk?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zMmEyYzEwOS04NWRmLTRmMzItOTNjMS05ZDkwMGEzYjdiOWMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ0aGVtb2RodWIvVGhlTW9kSHViX3JlbGVhc2UudjEuMC5hcGsiLCJpYXQiOjE3NTAwODA2MzEsImV4cCI6MjA2NTQ0MDYzMX0.aSwqGb8GebpykA7rUw34_5HKjviLinPht2illL6bAys" alt="TheModHub Icon">
     <div>
       <h1>TheModHub</h1>
       <p class="meta">Posted on: <strong>June 8, 2025</strong></p>
@@ -172,45 +157,44 @@
 
   <!-- Description -->
   <p class="app-description">
-    <strong>TheModHub</strong> is your ultimate Android toolbox and mod app hub. From betting prediction apps to AI chatbots, premium VPNs, developer tools and more — everything is beautifully packed into one lightweight platform.
+    <strong>TheModHub</strong> is an all-in-one Android platform that delivers access to the best modded apps across multiple categories — including betting prediction tools, premium VPN services, AI chatbots, and much more.
     <br><br>
-    Explore advanced APK tools, stay updated with the latest tech news, and boost productivity with exclusive built-in utilities — all wrapped in a stunning iOS-style glass UI.
+    Whether you're a tech enthusiast, a gamer, or someone who just wants more out of your apps, TheModHub offers optimized and enhanced versions that unlock full potential.
+    <br><br>
+    Plus, every app listing comes with helpful tutorials and usage tips, so even beginners can confidently install and enjoy the benefits. With a clean, iOS-inspired interface and constantly updated content, TheModHub makes it easier than ever to explore and install powerful tools with just a few taps.
   </p>
 
   <!-- Screenshots -->
   <div class="screenshots">
-    <img src="https://play-lh.googleusercontent.com/rbyjbq5130PBG8juJ8FTVNORZQy96wWjVzd97HlR_RD9XtkO8BfxYfWSwueBb7GnhvUO=w2560-h1440-rw">
-    <img src="https://play-lh.googleusercontent.com/Y694niDajaaxRGo0PFfSl_SwS4PO0f57_Nbt2U4DRmlQ1LSizBu7D03KbzmDJLWBT20=w2560-h1440-rw">
-    <img src="https://play-lh.googleusercontent.com/eUbd7MBC9LTN6aLqdJiaBQw4qHnYrgXZjg7oL4OI3Mx8IeS6Rot5uMByyr2oBJptIw=w2560-h1440-rw">
-    <img src="https://play-lh.googleusercontent.com/3eI0GGaUcOswxUY72ni-ma1ncxPgGcUlGlCToe4Ks6SkZ6Y7wT3gTohbLHKKLhlc3XM=w2560-h1440-rw">
-    <img src="https://play-lh.googleusercontent.com/pcKedlIE2oaMpS-RiEFkIbER6eQT8bs36oxfqkAdvi6OlUjuAEqLpM37vOMBurwozg=w2560-h1440-rw">
-    <img src="https://play-lh.googleusercontent.com/l7P1ANZYxVn8lKJgQd2oSgruV0GAKcfs3koCK9HVVukkBwdWEA-ZjJhcDWooa5Cc1RwN=w2560-h1440-rw">
+    <img src="https://pfwzdnxjhpyjurtmkkdo.supabase.co/storage/v1/object/sign/themodhub/S1.png">
+    <img src="https://pfwzdnxjhpyjurtmkkdo.supabase.co/storage/v1/object/sign/themodhub/S2.png">
+    <img src="https://pfwzdnxjhpyjurtmkkdo.supabase.co/storage/v1/object/sign/themodhub/s3.png">
+    <img src="https://pfwzdnxjhpyjurtmkkdo.supabase.co/storage/v1/object/sign/themodhub/s4.png">
+    <img src="https://pfwzdnxjhpyjurtmkkdo.supabase.co/storage/v1/object/sign/themodhub/S5.png">
+    <img src="https://pfwzdnxjhpyjurtmkkdo.supabase.co/storage/v1/object/sign/themodhub/S6.png">
   </div>
 
   <!-- Changelog -->
-  <h2>📋 What's New in v1.0.0</h2>
+  <h2>What's New in v1.0</h2>
   <ul class="changelog">
-    <li>🎨 Sleek iOS-style glass UI design</li>
-    <li>⚡ Faster APK downloader with pause/resume</li>
-    <li>🧰 New Tools:
+    <li>New iOS-style glass interface for a modern look</li>
+    <li>Faster modded APK downloader with pause/resume support</li>
+    <li>Bundled utilities:
       <ul>
-        <li>🔗 Link shortener</li>
-        <li>🖼️ AI image generator</li>
-        <li>🎨 Color picker</li>
-        <li>🔐 Password generator</li>
-        <li>📶 Network mode switcher</li>
-        <li>📥 Smart file downloader</li>
+        <li>Link shortener</li>
+        <li>AI image generator</li>
+        <li>Color picker</li>
+        <li>Password generator</li>
+        <li>Network mode switcher</li>
       </ul>
     </li>
-    <li>📰 Integrated tech news feed</li>
-    <li>📚 Articles & tutorials section</li>
-    <li>📂 Categorized browsing support</li>
-    <li>✨ And many more surprises</li>
+    <li>Tech news integration and articles section</li>
+    <li>Organized app categories for easier browsing</li>
   </ul>
 
-  <!-- Download -->
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="https://github.com/TheModHub/latest/raw/refs/heads/main/TheModHub_Latest.apk" class="download-mod-button">
+  <!-- Download Button -->
+  <div class="download-container">
+    <a href="https://your-download-link.apk" class="better-download-button">
       Download TheModHub APK
     </a>
   </div>
